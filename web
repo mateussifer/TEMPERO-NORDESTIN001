@@ -1,0 +1,43 @@
+// App.js - Parte 1
+
+import React, { useState } from 'react';
+import './App.css';
+
+function App() {
+  const [page, setPage] = useState('splash');
+
+  if (page === 'splash') {
+    setTimeout(() => setPage('home'), 2000);
+    return (
+      <div className="splash">
+        <h1>Tempero Nordestino</h1>
+      </div>
+    );
+  }
+
+  if (page === 'home') {
+    return (
+      <div className="container">
+        <header>
+          <h1>Tempero Nordestino</h1>
+          <nav>
+            <button onClick={() => setPage('home')}>Início</button>
+            <button onClick={() => setPage('receita')}>Receita do Dia</button>
+          </nav>
+        </header>
+        <main>
+          <h2>Receita do Dia</h2>
+          <div className="card" onClick={() => setPage('receita')}>
+            <img
+              src="https://cdn.panelinha.com.br/receita/1581951773014-moqueca-de-peixe.jpg"
+              alt="Baião de Dois"
+            />
+            <div>
+              <h3>Baião de Dois</h3>
+              <p>Uma explosão de sabores do sertão!</p>
+            </div>
+          </div>
+        </main>
+      </div>
+    );
+  }
