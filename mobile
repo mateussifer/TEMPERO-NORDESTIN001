@@ -1,0 +1,51 @@
+// App.js – Parte 1 (Mobile)
+
+import React, { useState } from 'react';
+import './App.css';
+
+function App() {
+  const [page, setPage] = useState('splash');
+
+  if (page === 'splash') {
+    setTimeout(() => setPage('login'), 2000);
+    return (
+      <div className="splash-mobile">
+        <h1>Tempero Nordestino</h1>
+      </div>
+    );
+  }
+
+  if (page === 'login') {
+    return (
+      <div className="login-page">
+        <h2>Bem-vindo de volta!</h2>
+        <input type="text" placeholder="Email" />
+        <input type="password" placeholder="Senha" />
+        <button onClick={() => setPage('home')}>Entrar</button>
+        <p onClick={() => setPage('recuperar')} className="link">Esqueceu a senha?</p>
+        <p onClick={() => setPage('cadastro')} className="link">Não tem uma conta? Cadastre-se</p>
+      </div>
+    );
+  }
+
+  if (page === 'recuperar') {
+    return (
+      <div className="recuperar-page">
+        <h2>Recuperar Senha</h2>
+        <input type="text" placeholder="Digite seu email" />
+        <button onClick={() => setPage('login')}>Enviar</button>
+      </div>
+    );
+  }
+
+  if (page === 'cadastro') {
+    return (
+      <div className="cadastro-page">
+        <h2>Crie sua conta</h2>
+        <input type="text" placeholder="Nome" />
+        <input type="text" placeholder="Email" />
+        <input type="password" placeholder="Senha" />
+        <button onClick={() => setPage('home')}>Cadastrar</button>
+      </div>
+    );
+  }
