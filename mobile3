@@ -1,0 +1,178 @@
+// App.js – Parte 1 (Mobile)
+
+import React, { useState } from 'react';
+import './App.css';
+
+function App() {
+  const [page, setPage] = useState('splash');
+
+  if (page === 'splash') {
+    setTimeout(() => setPage('login'), 2000);
+    return (
+      <div className="splash-mobile">
+        <h1>Tempero Nordestino</h1>
+      </div>
+    );
+  }
+
+  if (page === 'login') {
+    return (
+      <div className="login-page">
+        <h2>Bem-vindo de volta!</h2>
+        <input type="text" placeholder="Email" />
+        <input type="password" placeholder="Senha" />
+        <button onClick={() => setPage('home')}>Entrar</button>
+        <p onClick={() => setPage('recuperar')} className="link">Esqueceu a senha?</p>
+        <p onClick={() => setPage('cadastro')} className="link">Não tem uma conta? Cadastre-se</p>
+      </div>
+    );
+  }
+
+  if (page === 'recuperar') {
+    return (
+      <div className="recuperar-page">
+        <h2>Recuperar Senha</h2>
+        <input type="text" placeholder="Digite seu email" />
+        <button onClick={() => setPage('login')}>Enviar</button>
+      </div>
+    );
+  }
+
+  if (page === 'cadastro') {
+    return (
+      <div className="cadastro-page">
+        <h2>Crie sua conta</h2>
+        <input type="text" placeholder="Nome" />
+        <input type="text" placeholder="Email" />
+        <input type="password" placeholder="Senha" />
+        <button onClick={() => setPage('home')}>Cadastrar</button>
+      </div>
+    );
+  }
+// App.js – Parte 2 (continuação)
+
+  if (page === 'home') {
+    return (
+      <div className="home-page">
+        <h1>Receitas</h1>
+        <div className="card" onClick={() => setPage('receita')}>
+          <img
+            src="https://cdn.panelinha.com.br/receita/1581951773014-moqueca-de-peixe.jpg"
+            alt="Moqueca"
+          />
+          <h3>Moqueca de Peixe</h3>
+          <p>Tradicional do Nordeste</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (page === 'receita') {
+    return (
+      <div className="receita-page">
+        <img
+          src="https://cdn.panelinha.com.br/receita/1581951773014-moqueca-de-peixe.jpg"
+          alt="Moqueca"
+          className="imagem-receita"
+        />
+        <h2>Moqueca de Peixe</h2>
+        <p className="descricao">
+          Receita tradicional nordestina com peixe, leite de coco, tomate e coentro.
+        </p>
+        <button onClick={() => setPage('preparo')}>Modo de Preparo</button>
+        <button onClick={() => setPage('home')}>Voltar</button>
+      </div>
+    );
+  }
+// App.js – Parte 3 (final)
+
+  if (page === 'preparo') {
+    return (
+      <div className="preparo-page">
+        <h2>Modo de Preparo</h2>
+        <ol>
+          <li>Tempere o peixe com sal e limão</li>
+          <li>Refogue cebola, alho e tomate</li>
+          <li>Adicione o peixe e o leite de coco</li>
+          <li>Cozinhe em fogo médio por 15 minutos</li>
+          <li>Finalize com coentro e sirva</li>
+        </ol>
+        <button onClick={() => setPage('home')}>Voltar</button>
+      </div>
+    );
+  }
+
+  return null;
+}
+
+export default App;
+/* App.css – Parte 3 (estilos mobile) */
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  color: #333;
+}
+
+.splash-mobile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #387ADF;
+  color: white;
+  font-size: 2em;
+}
+
+.login-page, .cadastro-page, .recuperar-page, .home-page, .receita-page, .preparo-page {
+  padding: 20px;
+}
+
+input {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background: #387ADF;
+  color: white;
+  border: none;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+
+.link {
+  color: #387ADF;
+  text-decoration: underline;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.card {
+  background: #f0f0f0;
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+  cursor: pointer;
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.imagem-receita {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.descricao {
+  margin-bottom: 15px;
+}
