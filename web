@@ -90,3 +90,79 @@ function App() {
 }
 
 export default App;
+/* App.css */
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  color: #333;
+}
+
+.splash {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #387ADF;
+  color: white;
+  font-size: 3em;
+}
+
+.container {
+  padding: 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #387ADF;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+
+header h1 {
+  margin: 0;
+}
+
+nav button {
+  background: white;
+  color: #387ADF;
+  border: none;
+  padding: 10px 15px;
+  margin-left: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+main h2 {
+  margin-top: 20px;
+}
+
+.card {
+  display: flex;
+  background: #f9f9f9;
+  margin-top: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.card img {
+  width: 200px;
+  object-fit: cover;
+}
+
+.card div {
+  padding: 15px;
+}
+
+.descricao {
+  margin: 20px 0;
+  font-size: 1.1em;
+}
