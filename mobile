@@ -85,3 +85,97 @@ function App() {
       </div>
     );
   }
+
+
+// App.js – Parte 3 (final)
+
+  if (page === 'preparo') {
+    return (
+      <div className="preparo-page">
+        <h2>Modo de Preparo</h2>
+        <ol>
+          <li>Tempere o peixe com sal e limão</li>
+          <li>Refogue cebola, alho e tomate</li>
+          <li>Adicione o peixe e o leite de coco</li>
+          <li>Cozinhe em fogo médio por 15 minutos</li>
+          <li>Finalize com coentro e sirva</li>
+        </ol>
+        <button onClick={() => setPage('home')}>Voltar</button>
+      </div>
+    );
+  }
+
+  return null;
+}
+
+export default App;
+/* App.css – Parte 3 (estilos mobile) */
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  color: #333;
+}
+
+.splash-mobile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #387ADF;
+  color: white;
+  font-size: 2em;
+}
+
+.login-page, .cadastro-page, .recuperar-page, .home-page, .receita-page, .preparo-page {
+  padding: 20px;
+}
+
+input {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background: #387ADF;
+  color: white;
+  border: none;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+
+.link {
+  color: #387ADF;
+  text-decoration: underline;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.card {
+  background: #f0f0f0;
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+  cursor: pointer;
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.imagem-receita {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.descricao {
+  margin-bottom: 15px;
+}
