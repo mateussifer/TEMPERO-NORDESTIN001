@@ -49,3 +49,39 @@ function App() {
       </div>
     );
   }
+
+// App.js – Parte 2 (continuação)
+
+  if (page === 'home') {
+    return (
+      <div className="home-page">
+        <h1>Receitas</h1>
+        <div className="card" onClick={() => setPage('receita')}>
+          <img
+            src="https://cdn.panelinha.com.br/receita/1581951773014-moqueca-de-peixe.jpg"
+            alt="Moqueca"
+          />
+          <h3>Moqueca de Peixe</h3>
+          <p>Tradicional do Nordeste</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (page === 'receita') {
+    return (
+      <div className="receita-page">
+        <img
+          src="https://cdn.panelinha.com.br/receita/1581951773014-moqueca-de-peixe.jpg"
+          alt="Moqueca"
+          className="imagem-receita"
+        />
+        <h2>Moqueca de Peixe</h2>
+        <p className="descricao">
+          Receita tradicional nordestina com peixe, leite de coco, tomate e coentro.
+        </p>
+        <button onClick={() => setPage('preparo')}>Modo de Preparo</button>
+        <button onClick={() => setPage('home')}>Voltar</button>
+      </div>
+    );
+  }
